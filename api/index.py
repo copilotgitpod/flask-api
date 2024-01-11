@@ -10,6 +10,10 @@ news = [
     # Add more news here...
 ]
 
+@app.route('/api/news/', methods=['GET'])
+def get_all_news():
+    return jsonify(news)
+
 @app.route('/api/random-news/', methods=['GET'])
 def get_random_news():
     return jsonify(random.choice(news))
